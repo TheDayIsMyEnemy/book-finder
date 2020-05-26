@@ -1,0 +1,9 @@
+<div class="wrapper">
+    <div class="search">
+        <input class="search-query" (keyup.enter)="search(searchQuery.value)" #searchQuery placeholder="Search books..."/>
+        <button class="search-button" (click)="search(searchQuery.value)" type="submit">    
+            <fa-icon [icon]="faSearch"></fa-icon>
+        </button>
+    </div>
+    <app-books [books]="searchResult.items"></app-books>
+</div>

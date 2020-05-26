@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #dddddd;
+    margin: 0.5rem 1rem;
+    line-height: 1.2;
+}

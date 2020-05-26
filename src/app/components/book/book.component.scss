@@ -1,0 +1,37 @@
+.book {
+    display: grid;
+    grid-template-areas:
+        "img body"
+        "description description";
+    grid-template-rows: 12.5rem 7rem;
+    grid-template-columns: 8rem 1fr;
+    background-color: #eeeeee;
+    padding: 1.25rem;
+    column-gap: 0.75rem;
+
+    .book-img {
+        grid-area: img;
+        max-height: 12.5rem;
+    }
+
+    .book-body {
+        grid-area: body;
+
+        .book-title {
+            font-size: 1.25rem;
+            margin-top: 0;
+            margin-bottom: 0.75rem;
+        }
+        .book-subtitle {
+            font-size: 0.85rem;
+            margin-top: -0.375rem;
+            margin-bottom: 0;
+        }
+    }
+
+    .book-description {
+        grid-area: description;
+        margin-top: 0.2rem;
+        overflow: hidden;
+    }
+}

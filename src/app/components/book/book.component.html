@@ -1,0 +1,8 @@
+<div class="book">
+    <img class="book-img" src={{book.volumeInfo.imageLinks.thumbnail}}>
+    <div class="book-body">
+        <h5 class="book-title">{{normalizeBookTitle(book.volumeInfo.title, book.volumeInfo.subtitle)}}</h5>
+        <h6 class="book-subtitle">by {{book.volumeInfo.authors}}</h6>
+    </div>
+    <p class="book-description">{{normalizeBookDescription(book.volumeInfo.description)}}</p>
+</div>

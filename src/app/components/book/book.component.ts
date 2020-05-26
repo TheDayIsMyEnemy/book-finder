@@ -7,6 +7,9 @@ import { Book } from '../../models/book';
   styleUrls: ['./book.component.scss']
 })
 export class BookComponent implements OnInit {
+  descriptionLength = 180;
+  titleLength = 50;
+
   @Input() book: Book;
 
   constructor() { }
@@ -14,18 +17,19 @@ export class BookComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  
+
   normalizeBookTitle(title: string, subtitle: string) {
-    if (subtitle) {
-      title += `: ${subtitle}`;
-    }
-    return title;
+    return title.length > this.titleLength
+      ? ''
+      : subtitle && subtitle.length + title.length <= this.titleLength
+        ? title += `: ${subtitle}`
+        : title;
   }
 
   normalizeBookDescription(description: string) {
     const maxDescriptionLength = 220;
 
-    if (description.length > maxDescriptionLength) {
+    if (description && description.length > maxDescriptionLength) {
       const sentences = description.split(/(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?)\s/);
       description = '';
 

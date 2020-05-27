@@ -1,4 +1,4 @@
-<div class="book">
+<div class="book" *ngIf="book.volumeInfo.imageLinks">
     <img class="book-img" src={{book.volumeInfo.imageLinks.thumbnail}}>
     <div class="book-body">
         <h5 class="book-title">{{normalizeBookTitle(book.volumeInfo.title, book.volumeInfo.subtitle)}}</h5>
